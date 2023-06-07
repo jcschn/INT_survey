@@ -27,15 +27,6 @@ class Player(BasePlayer):
 
 # PAGES
 class Redirect(Page):
-    def vars_for_template(player):
-     
-        fixed_payment = 2.50
-        
-        
-        return dict(
-            
-            fixed_payment = fixed_payment,
-          
-        )
+    pass
 
 page_sequence = [Redirect]

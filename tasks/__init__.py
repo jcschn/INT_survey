@@ -56,7 +56,7 @@ class Player(BasePlayer):
     
     
    
-    #Exp Insormation Avoidance
+    #Exp Information Avoidance
     exp_1 = make_field2('  I would rather not know the product information. ')    
     exp_2 = make_field2('I would avoid learning the product information.')    
     exp_3 = make_field2('Even if it will upset me, I want to know the product information.')    
@@ -90,8 +90,8 @@ class Player(BasePlayer):
     clo_11 = make_field2('I dislike unpredictable situations.')
     clo_12 = make_field2('I find that establishing a consistent routine enables me to enjoy life more.')
     clo_13 = make_field2('I enjoy having a clear and structured mode of life.')
-    clo_14 = make_field2('I dislike it when a persons statement could mean many different things.')
-    clo_15 = make_field2('I don`t like to be with people who are capable of unexpected actions.')
+    clo_14 = make_field2("I dislike it when a person's statement could mean many different things.")
+    clo_15 = make_field2("I don't like to be with people who are capable of unexpected actions.")
         
     
     
@@ -135,14 +135,14 @@ class Player(BasePlayer):
     per_7 = make_field2('does a thorough job.')
     per_8 = make_field2('gets nervous easily.')
     per_9 = make_field2('has an active imagination.')
-
+    attention = make_field2('check box number six.')
     
 
 
-    buy_1 = make_field2('Clothes.')
+    buy_1 = make_field2('Clothes')
     buy_2 = make_field2('Food')
     buy_3 = make_field2('Furniture')
-    attention = make_field2('Check box number six')
+
     
     
 class fin_lit(Page):
@@ -269,10 +269,10 @@ class price(Page):
                 
 class pers(Page):
     form_model = 'player'
-    get_form_fields = ['per_1', 'per_2', 'per_3', 'per_4', 'per_5', 'per_6','per_7','per_8','per_9']
+    get_form_fields = ['per_1', 'per_2', 'per_3', 'per_4', 'per_5', 'per_6','per_7','per_8','per_9','attention']
 
     def get_form_fields(self):        
-     form_fields = ['per_1', 'per_2', 'per_3', 'per_4', 'per_5', 'per_6','per_7','per_8','per_9']
+     form_fields = ['per_1', 'per_2', 'per_3', 'per_4', 'per_5', 'per_6','per_7','per_8','per_9','attention']
      random.shuffle(form_fields)
      return form_fields
                     
@@ -297,21 +297,7 @@ class buy(Page):
             participant = player.participant
             return player.round_number == participant.task_rounds['buying']
         
-        
-class att(Page):
-    form_model = 'player'
-    get_form_fields = ['attention']
-                   
-    def get_form_fields(self):        
-                    form_fields = ['attention']
-                    random.shuffle(form_fields)
-                    return form_fields
-                
-    @staticmethod
-    def is_displayed(player: Player):
-                participant = player.participant
-                return player.round_number == participant.task_rounds['attention']
-        
+
 
 page_sequence = [
     fin_lit,
@@ -323,5 +309,4 @@ page_sequence = [
     price,
     pers,
     buy,
-    att
 ]

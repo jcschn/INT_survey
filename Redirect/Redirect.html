@@ -19,27 +19,30 @@
         Recall you will be paid after the second part of the experiment for which you receive a variable payment. 
         The fixed payment for this survey will be displayed below and will be paid out together at the end with the variable payment.
     </p>
-    <p>
-        <table style="width:100%">
+
+    <div style="text-align: center">
+        <table style="width:40%;margin-left:auto;margin-right:auto;">
             <tr>
             
-                <td style="width:50%">Your fixed payment:</td>
-                <td style="width:50%">{{session.participation_fee}}</td>
+                <td style="width:100%"><b>Your fixed payment:</b></td>
+                <td style="width:100%"><b>{{session.participation_fee}}</b></td>
              
             </tr>
         </table>
-    </p>
-    <br>  
-    <p>          
+    </div>
+    <p>
+        <br>
         Thank you for participating in this survey!
     </p>
     <p>
         Please click on the &ldquo;Finish&rdquo; button to finish the survey.
     </p>
 </div>
-
+<br>
 <div style="text-align: center">
 <a href="{{ C.Redirect_Link }}" class="btn btn-primary">Finish</a>
+</div>
+
 </div>
 
 {{ endblock }}
