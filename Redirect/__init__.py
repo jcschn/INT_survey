@@ -29,7 +29,7 @@ class Player(BasePlayer):
 class Redirect(Page):
     def vars_for_template(player):
      
-        fixed_payment = 2
+        fixed_payment = 2.50
         
         
         return dict(
