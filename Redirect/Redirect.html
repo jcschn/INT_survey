@@ -1,0 +1,45 @@
+{% block styles %}
+
+<link href="{% static 'global/global.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+
+{{ block title }}
+    <div style="text-align: center">
+        <b> </b>
+    </div>
+{{ endblock }}
+
+{{ block content }}
+
+<div class="wrapper textbox">
+
+    <p>
+        Recall you will be paid after the second part of the experiment for which you receive a variable payment. 
+        The fixed payment for this survey will be displayed below and will be paid out together at the end with the variable payment.
+    </p>
+    <p>
+        <table style="width:100%">
+            <tr>
+            
+                <td style="width:50%">Your fixed payment:</td>
+                <td style="width:50%">£{{ fixed_payment }}</td> 
+             
+            </tr>
+        </table>
+    </p>
+    <br>  
+    <p>          
+        Thank you for participating in this survey!
+    </p>
+    <p>
+        Please click on the &ldquo;Finish&rdquo; button to finish the survey.
+    </p>
+</div>
+
+<div style="text-align: center">
+<a href="{{ C.Redirect_Link }}" class="btn btn-primary">Finish</a>
+</div>
+
+{{ endblock }}
